@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    background-image: radial-gradient(circle, #011028, #0a1023, #10111d, #121218, #131313);
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: #d9d9d9;
+    text-shadow: rgba(191,191,191,0.73) 0px 0px 22px;
+}
+
+.clock {
+    font-size: 100px;
+    letter-spacing: 3px;
+}
+
+.date {
+    font-size: 20px;
+}
+
+@media(max-width: 610px) {
+    .clock {
+        font-size: 60px;
+    }
+    .date {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 390px) {
+    .clock {
+        font-size: 40px;
+    }
+    .date {
+        font-size: 10px;
+    }
+}
