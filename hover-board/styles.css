@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    min-width: 500px;
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cell {
+    margin: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    background-color: #292929;
+    transition: 1s ease-in-out;
+}
+
+.cell:hover {
+    transition-duration: 0s;
+}
