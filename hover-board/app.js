@@ -6,7 +6,7 @@ const colors = [
     '#dec2cb'
 ];
 const CELLS = 625;
-const board = document.querySelector('#board');
+const board = document.getElementById('board');
 
 for(let i = 0; i < CELLS; i++) {
     const div = document.createElement('div');
