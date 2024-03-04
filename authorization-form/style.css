@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --accent-color: #4b8dde;
+    --border-radius: 8px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +17,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--accent-color);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0px 1000px #FFF inset;
 }
 
 /* ------- Wrapping card ------- */
@@ -21,8 +34,8 @@ body {
     right: 1rem;
 }
 .wrapper {
-    height: 400px;
-    width: 350px;
+    height: 535px;
+    width: 450px;
     position: relative;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -31,8 +44,10 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #c69696;
-    transform: translateY(0deg);
+    padding: 20px;
+    margin: 20px;
+    border-radius: var(--border-radius);
+    background-color: #fff;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transition: transform .8s cubic-bezier(.4, .2, .2, 1);
@@ -45,4 +60,121 @@ body {
 }
 .wrapper[data-active-form-type="sign-in"] .sign-in {
     transform: rotateY(0deg);
+}
+
+/* ------- Common form styles ------- */
+
+.form {
+    font-family: "Sarabun", sans-serif;
+    width: 100%;
+}
+.form-title {
+    font-family: "Noto Sans Display", sans-serif;
+    text-align: center;
+    margin: 10px auto 30px;
+}
+.input-wrap {
+    margin: 20px 0;
+    position: relative;
+}
+.input-wrap > input {
+    font-size: 16px;
+    line-height: 56px;
+    width: 100%;
+    height: 56px;
+    padding: 16px;
+    border: 1px solid #c5c0c0;
+    border-radius: var(--border-radius);
+}
+.input-wrap > input:autofill {
+    background-color: #FFF;
+}
+.input-wrap > input::placeholder {
+    color: #fff;
+}
+.input-wrap > div {
+    pointer-events: none;
+    font-size: 16px;
+    color: grey;
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.input-wrap > input:focus + div {
+    color: var(--accent-color);
+}
+.input-wrap > input:focus + div,
+.input-wrap > input:not(:placeholder-shown) + div {
+    font-size: 13px;
+    top: -7px;
+    left: 10px;
+    padding: 0 5px;
+    background-color: #fff;
+}
+.input-wrap > input:focus {
+    outline: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
+}
+.primary-btn {
+    font-family: "Noto Sans Display", sans-serif;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 16px;
+    height: 56px;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--accent-color);
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.primary-btn:hover {
+    background-color: #355982;
+}
+.footer {
+    font-family: "Sarabun", sans-serif;
+    text-align: center;
+    margin: 24px auto;
+}
+.footer-link {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* ------- Signup form styles ------- */
+
+.input-group {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.input-group .input-wrap {
+    width: 48%;
+    margin: 0;
+}
+
+/* ------- Signin form styles ------- */
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sign-in .form-title {
+    margin-bottom: 16px;
+}
+.secondary-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.secondary-wrap > a {
+    color: var(--accent-color);
+    text-decoration: none;
 }

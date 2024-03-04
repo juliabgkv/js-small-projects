@@ -9,12 +9,57 @@
 <body>
     <div id="formWrapper" class="wrapper" data-active-form-type="sign-up">
         <div id="signUpSide" class="card sign-up active">
-            Sign Up
-            <button id="signInBtn">Sign In ></button>
+            <h1 class="form-title">Registration</h1>
+            <form id="signUp" class="form sign-up-form">
+                <div class="input-group">
+                    <div class="input-wrap">
+                        <input id="name" type="text" placeholder=" ">
+                        <div>Name</div>
+                    </div>
+                    <div class="input-wrap">
+                        <input id="surname" type="text" placeholder=" ">
+                        <div>Surname</div>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <input type="email" placeholder=" ">
+                    <div>Email</div>
+                </div>
+                <div class="input-wrap">
+                    <input type="password" placeholder=" ">
+                    <div>Create password</div>
+                </div>
+                <div class="input-wrap">
+                    <input type="password" placeholder=" ">
+                    <div>Confirm password</div>
+                </div>
+                <button class="primary-btn">Signup</button>
+            </form>
+            
+            <div class="footer">Already have an account? <span id="signInBtn" class="footer-link">Login</span></div>
         </div>
         <div id="signInSide" class="card sign-in">
-            Sign In
-            <button id="signUpBtn">Sign Up ></button>
+            <h1 class="form-title">Welcome back!</h1>
+            <form id="signIn" class="form sign-in-form">
+                <div class="input-wrap">
+                    <input type="email" placeholder=" ">
+                    <div>Email</div>
+                </div>
+                <div class="input-wrap">
+                    <input type="password" placeholder=" ">
+                    <div>Password</div>
+                </div>
+                <div class="secondary-wrap">
+                    <div>
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#">Forgot a password?</a>
+                </div>
+                <button class="primary-btn">Login</button>
+            </form>
+            
+            <div class="footer">Don`t have an account? <span id="signUpBtn" class="footer-link">Signup</span></div>
         </div>
     </div>
 
