@@ -15,6 +15,11 @@ body {
 
 /* ------- Wrapping card ------- */
 
+.custom-select {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
 .wrapper {
     height: 400px;
     width: 350px;
