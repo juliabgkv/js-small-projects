@@ -1,8 +1,18 @@
+const formWrapper = document.getElementById('formWrapper');
+
 document.getElementById('signInBtn').addEventListener('click', () => {
-    document.getElementById('formWrapper').dataset.activeFormType = 'sign-in';
+    formWrapper.dataset.activeFormType = 'sign-in';
     document.title = 'Sign In';
 });
 document.getElementById('signUpBtn').addEventListener('click', () => {
-    document.getElementById('formWrapper').dataset.activeFormType = 'sign-up';
+    formWrapper.dataset.activeFormType = 'sign-up';
     document.title = 'Sign Up';
+});
+document.getElementById('signUp').addEventListener('submit', (e) => {
+    e.preventDefault();
+    formWrapper.innerHTML = document.getElementById('success-signup').innerHTML;
+});
+document.getElementById('signIn').addEventListener('submit', () => {
+    e.preventDefault();
+    formWrapper.innerHTML = document.getElementById('success-signin').innerHTML;
 });

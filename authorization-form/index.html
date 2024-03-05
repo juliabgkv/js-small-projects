@@ -14,24 +14,24 @@
                 <div class="input-group">
                     <div class="input-wrap">
                         <input id="name" type="text" placeholder=" ">
-                        <div>Name</div>
+                        <div class="input-title">Name</div>
                     </div>
                     <div class="input-wrap">
                         <input id="surname" type="text" placeholder=" ">
-                        <div>Surname</div>
+                        <div class="input-title">Surname</div>
                     </div>
                 </div>
                 <div class="input-wrap">
                     <input type="email" placeholder=" ">
-                    <div>Email</div>
+                    <div class="input-title">Email</div>
                 </div>
                 <div class="input-wrap">
                     <input type="password" placeholder=" ">
-                    <div>Create password</div>
+                    <div class="input-title">Create password</div>
                 </div>
                 <div class="input-wrap">
                     <input type="password" placeholder=" ">
-                    <div>Confirm password</div>
+                    <div class="input-title">Confirm password</div>
                 </div>
                 <button class="primary-btn">Signup</button>
             </form>
@@ -43,11 +43,11 @@
             <form id="signIn" class="form sign-in-form">
                 <div class="input-wrap">
                     <input type="email" placeholder=" ">
-                    <div>Email</div>
+                    <div class="input-title">Email</div>
                 </div>
                 <div class="input-wrap">
                     <input type="password" placeholder=" ">
-                    <div>Password</div>
+                    <div class="input-title">Password</div>
                 </div>
                 <div class="secondary-wrap">
                     <div>
@@ -62,6 +62,19 @@
             <div class="footer">Don`t have an account? <span id="signUpBtn" class="footer-link">Signup</span></div>
         </div>
     </div>
+
+    <template id="success-signup">
+        <div class="success-message">
+            <p>You`re signed up! 🎉</p>
+            <p>Reload page to back to the form</p>
+        </div>
+    </template>
+    <template id="success-signin">
+        <div class="success-message">
+            <p>You`re signed in! 🎉</p>
+            <p>Reload page to back to the form</p>
+        </div>
+    </template>
 
     <script src="./app.js"></script>
 </body>
