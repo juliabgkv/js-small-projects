@@ -1,0 +1,16 @@
+/* ------- Success message styles ------- */
+
+.success-message {
+    font-family: "Noto Sans Display", sans-serif;
+    font-size: 24px;
+    margin: 50px 10px;
+    padding: 32px 16px;
+    text-align: center;
+    background-color: #FFF;
+}
+.success-message > p:nth-of-type(2n) {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5d5959;
+}

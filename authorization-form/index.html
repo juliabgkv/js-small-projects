@@ -9,72 +9,70 @@
 <body>
     <div id="formWrapper" class="wrapper" data-active-form-type="sign-up">
         <div id="signUpSide" class="card sign-up active">
-            <h1 class="form-title">Registration</h1>
-            <form id="signUp" class="form sign-up-form">
-                <div class="input-group">
-                    <div class="input-wrap">
-                        <input id="name" type="text" placeholder=" ">
-                        <div class="input-title">Name</div>
+            <div class="center-wrap">
+                <h1 class="form-title">Registration</h1>
+                <form id="signUpForm" class="form sign-up-form">
+                    <div class="input-group">
+                        <div class="input-wrap">
+                            <input type="text" name="name" id="name" placeholder=" " />
+                            <label for="name" class="input-label">Name</label>
+                            <div class="alert-message">Your name can`t be empty</div>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" name="surname" id="surname" placeholder=" " />
+                            <label for="surname" class="input-label">Surname</label>
+                            <div class="alert-message">Your surname can`t be empty</div>
+                        </div>
                     </div>
                     <div class="input-wrap">
-                        <input id="surname" type="text" placeholder=" ">
-                        <div class="input-title">Surname</div>
+                        <input type="email" name="email" id="email" placeholder=" " />
+                        <label for="email" class="input-label">Email</label>
+                        <div class="alert-message">Please, enter email</div>
                     </div>
-                </div>
-                <div class="input-wrap">
-                    <input type="email" placeholder=" ">
-                    <div class="input-title">Email</div>
-                </div>
-                <div class="input-wrap">
-                    <input type="password" placeholder=" ">
-                    <div class="input-title">Create password</div>
-                </div>
-                <div class="input-wrap">
-                    <input type="password" placeholder=" ">
-                    <div class="input-title">Confirm password</div>
-                </div>
-                <button class="primary-btn">Signup</button>
-            </form>
-            
-            <div class="footer">Already have an account? <span id="signInBtn" class="footer-link">Login</span></div>
+                    <div class="input-wrap">
+                        <input type="password" name="password" id="password" placeholder=" " />
+                        <label for="password" class="input-label">Create password</label>
+                        <div class="alert-message">Password can`t be empty</div>
+                        <div id="showPassRegBtn" class="show-pass-btn" title="Show Password"></div>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="password" id="passwordConfirm" placeholder=" " />
+                        <label for="passwordConfirm" class="input-label">Confirm password</label>
+                        <div class="alert-message">Please, confirm password</div>
+                    </div>
+                    <button class="primary-btn">Signup</button>
+                </form>
+                <div class="footer">Already have an account? <span id="signInBtn" class="footer-link">Login</span></div>
+            </div>
         </div>
         <div id="signInSide" class="card sign-in">
-            <h1 class="form-title">Welcome back!</h1>
-            <form id="signIn" class="form sign-in-form">
-                <div class="input-wrap">
-                    <input type="email" placeholder=" ">
-                    <div class="input-title">Email</div>
-                </div>
-                <div class="input-wrap">
-                    <input type="password" placeholder=" ">
-                    <div class="input-title">Password</div>
-                </div>
-                <div class="secondary-wrap">
-                    <div>
-                        <input type="checkbox" id="remember">
-                        <label for="remember">Remember me</label>
+            <div class="center-wrap">
+                <h1 class="form-title">Welcome back!</h1>
+                <form id="signInForm" class="form sign-in-form">
+                    <div class="input-wrap">
+                        <input type="email" name="email" id="loginEmail" placeholder=" " />
+                        <label for="loginEmail" class="input-label">Email</label>
+                        <div class="alert-message">Please, enter email</div>
                     </div>
-                    <a href="#">Forgot a password?</a>
-                </div>
-                <button class="primary-btn">Login</button>
-            </form>
-            
-            <div class="footer">Don`t have an account? <span id="signUpBtn" class="footer-link">Signup</span></div>
+                    <div class="input-wrap">
+                        <input type="password" name="password" id="loginPassword" placeholder=" " />
+                        <label for="loginPassword" class="input-label" title="Show Password">Password</label>
+                        <div class="alert-message">Password can`t be empty</div>
+                        <div id="showPassLogBtn" class="show-pass-btn"></div>
+                    </div>
+                    <div class="secondary-wrap">
+                        <div class="checkbox-wrap">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#">Forgot a password?</a>
+                    </div>
+                    <button class="primary-btn">Login</button>
+                </form>
+                <div class="footer">Don`t have an account? <span id="signUpBtn" class="footer-link">Signup</span></div>
+            </div>
         </div>
     </div>
-
-    <template id="success-signup">
-        <div class="success-message">
-            <p>You`re signed up! 🎉</p>
-            <p>Reload page to back to the form</p>
-        </div>
-    </template>
-    <template id="success-signin">
-        <div class="success-message">
-            <p>You`re signed in! 🎉</p>
-            <p>Reload page to back to the form</p>
-        </div>
-    </template>
 
     <script src="./app.js"></script>
 </body>
