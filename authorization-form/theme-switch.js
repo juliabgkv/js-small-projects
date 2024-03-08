@@ -7,10 +7,12 @@ Array.prototype.map.call(themeOptions, option => option.addEventListener('click'
 
 function themeClickHandler() {
     Array.prototype.map.call(themeOptions, option => option.classList.remove('active'));
+
     this.classList.add('active');
 
-    activateTheme(this.id);
-
+    const themeName = this.id;
+    activateTheme(themeName);
+    
     localStorage.setItem(STORAGE_KEY, themeName);
 }
 function init() {
