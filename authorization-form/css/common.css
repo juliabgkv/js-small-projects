@@ -93,7 +93,7 @@ input:-webkit-autofill:active{
 .wrapper {
     height: 535px;
     width: 450px;
-    margin-top: 20px;
+    margin-top: 60px;
     position: relative;
     transform-style: preserve-3d;
     perspective: 2000px;
@@ -313,4 +313,24 @@ footer {
 }
 footer a {
     color: var(--accent-color);
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 100%;
+        min-width: 320px;
+    }
+    .wrapper .card {
+        border-radius: 0;
+    }
+}
+@media (max-width: 410px) {
+    .center-wrap {
+        padding: 0 20px;
+    }
+}
+@media (max-width: 360px) {
+    .center-wrap {
+        padding: 0 20px;
+    }
 }
