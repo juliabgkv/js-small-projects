@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 :root {
-    --accent-color: #399FCD;
-    --secondary-color: #CAC9D8;
     --border-radius: 8px;
 }
 * {
@@ -16,14 +13,74 @@ html, body {
 }
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background-color: #F5F5F5;
+    align-items: center;
+    background-color: var(--background-color);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0px 1000px #FFF inset;
+    -webkit-text-fill-color: var(--text-color);
+    -webkit-box-shadow: 0 0 0px 1000px var(--card-background-color) inset;
+}
+
+/* ------- Theme select styles ------- */
+
+.theme-block {
+    position: absolute;
+    top: -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.theme-block:hover {
+    top: 0;
+}
+.theme-block .theme-activate {
+    width: 30px;
+    height: 30px;
+    background: var(--arrow-down-icon-url) no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+    transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.theme-block:hover .theme-activate {
+    visibility: hidden;
+    opacity: 0;
+}
+.theme-switch-container {
+    font-family: "Noto Sans Display", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.theme-switch-container .theme-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    color: var(--text-color);
+    border: 1px solid #c5c0c0;
+    border-radius: var(--border-radius);
+    margin: 8px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.theme-switch-container .theme-option:hover {
+    background-color: var(--accent-color);
+}
+.theme-switch-container .theme-option.active {
+    background-color: var(--card-background-color);
+}
+.theme-switch-container .theme-option.active .accent-circle {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
 }
 
 /* ------- Wrapping card ------- */
@@ -36,20 +93,19 @@ input:-webkit-autofill:active{
 .wrapper {
     height: 535px;
     width: 450px;
-    margin-top: 60px;
+    margin-top: 20px;
     position: relative;
     transform-style: preserve-3d;
-    perspective: 1000px;
+    perspective: 2000px;
 }
 .wrapper .card {
     position: absolute;
     height: 100%;
     width: 100%;
     padding: 20px;
-    margin: 20px;
     border-radius: var(--border-radius);
-    background-color: #fff;
-    box-shadow: 0px 0px 5px 0px rgba(209,209,209,1);
+    background-color: var(--card-background-color);
+    box-shadow: var(--box-shadow);
     transform-style: preserve-3d;
     backface-visibility: hidden;
     transition: transform 1.3s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -84,6 +140,7 @@ input:-webkit-autofill:active{
 .form-title {
     font-family: "Noto Sans Display", sans-serif;
     text-align: center;
+    color: var(--form-title-color);
     margin: 10px auto 20px;
 }
 .input-wrap {
@@ -92,10 +149,12 @@ input:-webkit-autofill:active{
 }
 .input-wrap > input {
     font-size: 16px;
+    color: var(--text-color);
     width: 100%;
     padding: 16px;
     border: 1px solid #c5c0c0;
     border-radius: var(--border-radius);
+    background-color: var(--card-background-color);
 }
 .input-wrap > input:autofill {
     background-color: #FFF;
@@ -121,7 +180,7 @@ input:-webkit-autofill:active{
     top: -9px;
     left: 10px;
     padding: 0 5px;
-    background-color: #fff;
+    background-color: var(--card-background-color);
 }
 .input-wrap > input:focus {
     outline: 1px solid var(--accent-color);
@@ -151,18 +210,18 @@ input:-webkit-autofill:active{
     display: block;
 }
 .show-pass-btn {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 10px;
     top: 15px;
-    background: url(./assets/icons8-show-64.png) no-repeat;
+    background: var(--show-pass-icon-url) no-repeat;
     background-position: center;
-    background-size: 25px 25px;
+    background-size: 20px 20px;
     cursor: pointer;
 }
 .show-pass-btn.active {
-    background-image: url(./assets/icons8-hide-64.png);
+    background-image: var(--hide-pass-icon-url);
 }
 .primary-btn {
     font-family: "Noto Sans Display", sans-serif;
@@ -175,16 +234,17 @@ input:-webkit-autofill:active{
     width: 100%;
     border: none;
     border-radius: var(--border-radius);
-    background-color: var(--accent-color);
+    background-color: var(--primary-btn-color);
     cursor: pointer;
-    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .primary-btn:hover {
-    background-color: #355982;
+    background-color: var(--btn-hover-color);
 }
 .footer {
     font-family: "Sarabun", sans-serif;
     text-align: center;
+    color: var(--text-color);
     margin: 15px auto;
 }
 .footer-link {
@@ -226,6 +286,12 @@ input:-webkit-autofill:active{
 .secondary-wrap > a:hover {
     text-decoration: underline;
 }
-.checkbox-wrap > input, label {
+.checkbox-wrap > label {
+    color: var(--text-color);
+}
+.checkbox-wrap > input {
+    accent-color: var(--checkbox-color);
+}
+.checkbox-wrap > label, input {
     cursor: pointer;
 }

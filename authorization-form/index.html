@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="./style.css">
+    <link id="themeStylesheetLink" rel="stylesheet" href="./css/themes/default.css">
+    <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
+    <div class="theme-block">
+        <div class="theme-switch-container">
+            <div id="default" class="theme-option"><span class="accent-circle"></span>Default</div>
+            <div id="dark" class="theme-option"><span class="accent-circle"></span>Dark</div>
+            <div id="forest" class="theme-option"><span class="accent-circle"></span>Forest</div>
+        </div>
+        <div class="theme-activate"></div>
+    </div>
+
     <div id="formWrapper" class="wrapper" data-active-form-type="sign-up">
         <div id="signUpSide" class="card sign-up active">
             <div class="center-wrap">
@@ -45,6 +55,7 @@
                 <div class="footer">Already have an account? <span id="signInBtn" class="footer-link">Login</span></div>
             </div>
         </div>
+
         <div id="signInSide" class="card sign-in">
             <div class="center-wrap">
                 <h1 class="form-title">Welcome back!</h1>
@@ -75,5 +86,6 @@
     </div>
 
     <script src="./app.js"></script>
+    <script src="./theme-switch.js"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+:root {
+    --form-title-color: #FFF;
+    --text-color: #FFF;
+    --accent-color: #CE862E;
+    --background-color: #1C1C1C;
+    --card-background-color: #192C21;
+    --box-shadow: none;
+    --checkbox-color: #CE862E;
+    --primary-btn-color: #121212;
+    --btn-hover-color: #CE862E;
+    --show-pass-icon-url: url(../assets/forest/icons8-eye-30.png);
+    --hide-pass-icon-url: url(../assets/forest/icons8-hide-30.png);
+    --arrow-down-icon-url: url(../assets/forest/icons8-arrow-down-50forest.png);
+}

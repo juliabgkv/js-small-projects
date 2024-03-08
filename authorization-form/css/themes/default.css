@@ -1,0 +1,14 @@
+:root {
+    --form-title-color: #000;
+    --text-color: #000;
+    --accent-color: #399FCD;
+    --background-color: #F8F8F8;
+    --card-background-color: #FFF;
+    --box-shadow: 0px 0px 5px 0px rgba(209, 209, 209, 1);
+    --checkbox-color: none;
+    --primary-btn-color: #399FCD;
+    --btn-hover-color: #355982;
+    --show-pass-icon-url: url(../assets/default/icons8-show-64.png);
+    --hide-pass-icon-url: url(../assets/default/icons8-hide-64.png);
+    --arrow-down-icon-url: url(../assets/default/icons8-arrow-down-50default.png);
+}

@@ -30,7 +30,7 @@ function submitFormHandler(e) {
     const isSigningUp = (this.closest('#signUpForm')) ? true : false;
     const inputs = isSigningUp ? signupInputs : signinInputs;
     let isValidForm = true;
-    
+
     Array.prototype.map.call(inputs, (input) => {
         if(isEmptyInput(input)) {
             input.classList.add('invalid');
@@ -43,12 +43,12 @@ function submitFormHandler(e) {
             // const formData = new FormData(signUpForm);
             // sendData('https:/...signup-url', formData);
 
-            location.href = './successsignup.html'; // just to demo form work without making request
+            location.href = './success-pages/successsignup.html'; // just to demo form work without making request
         } else {
             // const formData = new FormData(signInForm);
             // sendData('https:/...signin-url', formData);
 
-            location.href = './successignin.html'; // just to demo form work without making request
+            location.href = './success-pages/successignin.html'; // just to demo form work without making request
         }
     }
 }
@@ -75,10 +75,10 @@ function inputKeyupHandler() {
         
         if(pass.value !== passConf.value) {
             passConf.classList.add('invalid');
-            setAlertMessage('Passwords don`t match');
+            setAlertMessage(passConf, 'Passwords don`t match');
         } else {
             passConf.classList.remove('invalid');
-            setAlertMessage('Please confirm password'); //reset message
+            setAlertMessage(passConf, 'Please confirm password'); //reset message
         }
     } else if(this.classList.contains('invalid')) {
         this.classList.remove('invalid');
@@ -98,8 +98,8 @@ function toggleInputType(input) {
 function isEmptyInput(input) {
     return input.value.trim().length === 0;
 }
-function setAlertMessage(msg) {
-    passConf.parentElement.querySelector('.alert-message').textContent = msg;
+function setAlertMessage(input, msg) {
+    input.parentElement.querySelector('.alert-message').textContent = msg;
 }
 async function sendData(url, data) {
     try {
