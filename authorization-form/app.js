@@ -39,17 +39,22 @@ function submitFormHandler(e) {
     });
 
     if(isValidForm) {
+        let formData, url;
+
         if(isSigningUp) {
-            // const formData = new FormData(signUpForm);
-            // sendData('https:/...signup-url', formData);
+            // formData = new FormData(signUpForm);
+            // url = 'https://../sign-up';
+            signUpForm.reset();
 
-            location.href = './success-pages/successsignup.html'; // just to demo form work without making request
+            alert('You`re signed up! 🎉');
         } else {
-            // const formData = new FormData(signInForm);
-            // sendData('https:/...signin-url', formData);
+            // formData = new FormData(signInForm);
+            // url = 'https://../sign-in';
+            signInForm.reset();
 
-            location.href = './success-pages/successignin.html'; // just to demo form work without making request
+            alert('You`re signed in! 🎉');
         }
+        // sendData('https:/...signup-url', formData);
     }
 }
 function passVisibilityToggle() {

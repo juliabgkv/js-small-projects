@@ -77,8 +77,8 @@ input:-webkit-autofill:active{
 }
 .theme-switch-container .theme-option.active .accent-circle {
     display: block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: var(--accent-color);
 }
