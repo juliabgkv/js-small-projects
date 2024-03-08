@@ -266,6 +266,17 @@ input:-webkit-autofill:active{
 .input-group .input-wrap {
     margin: 0;
 }
+.generate-pass-btn {
+    width: 20px;
+    height: 20px;
+    background: var(--safe-pass-icon-url) no-repeat;
+    background-size: 20px 20px;
+    background-position: center;
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    cursor: pointer;
+}
 
 /* ------- Signin form styles ------- */
 

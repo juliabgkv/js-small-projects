@@ -3,6 +3,7 @@ const formWrapper = document.getElementById('formWrapper'),
       signinInputs = document.querySelectorAll('#signInForm input'),
       showPassRegBtn = document.getElementById('showPassRegBtn'),
       showPassLogBtn = document.getElementById('showPassLogBtn'),
+      generatePassBtn = document.getElementById('generatePassBtn'),
       signUpForm = document.getElementById('signUpForm'),
       signInForm = document.getElementById('signInForm'),
       pass = document.getElementById('password'),
@@ -15,6 +16,7 @@ signUpForm.addEventListener('submit', submitFormHandler);
 signInForm.addEventListener('submit', submitFormHandler);
 showPassRegBtn.addEventListener('click', passVisibilityToggle);
 showPassLogBtn.addEventListener('click', passVisibilityToggle);
+generatePassBtn.addEventListener('click', generateSafePassword);
 Array.prototype.map.call(signupInputs, input => input.addEventListener('keyup', inputKeyupHandler));
 Array.prototype.map.call(signinInputs, input => input.addEventListener('keyup', inputKeyupHandler));
 
@@ -69,13 +71,36 @@ function passVisibilityToggle() {
         toggleInputType(document.getElementById('loginPassword'));
     }
 }
+function generateSafePassword() {
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const passLength = 12;
+    let password = '';
+
+    for(let i = 0; i <= passLength; i++) {
+        const randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber + 1);
+    }
+
+    pass.value = passConf.value = password;
+    
+    pass.classList.remove('invalid');
+    passConf.classList.remove('invalid');
+}
 function inputKeyupHandler() {
     if(this.id === 'password' || this.id === 'passwordConfirm') {
         if(this.id === 'password') {
-            if(pass.classList.contains('invalid')) 
+            if(pass.value.length < 6) {
+                pass.classList.add('invalid');
+                setAlertMessage(pass, 'Your password is too short, make it at least 6 symbols');
+            } else if(pass.value.length >= 6) {
                 pass.classList.remove('invalid');
+                setAlertMessage(pass, 'Password can`t be empty');
+            } else {
+                if(pass.classList.contains('invalid')) 
+                    pass.classList.remove('invalid');
+            }
 
-            if(!passConf.value) return; // skip password confirm if it`s empty
+            if(!passConf.value) return; // skip password confirm validation if it`s empty
         }
         
         if(pass.value !== passConf.value) {
