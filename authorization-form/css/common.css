@@ -306,3 +306,11 @@ input:-webkit-autofill:active{
 .checkbox-wrap > label, input {
     cursor: pointer;
 }
+footer {
+    font-family: "Sarabun", sans-serif;
+    color: var(--text-color);
+    margin: 6rem auto 2rem;
+}
+footer a {
+    color: var(--accent-color);
+}
