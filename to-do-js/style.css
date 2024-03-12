@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&family=Roboto:wght@100;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1D2041;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    margin: 50px auto;
+    width: 40%;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #252849;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin: 20px 0;
+}
+
+.add-form {
+    display: flex;
+    height: 40px;
+}
+
+.add-form  input {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 90%;
+    font-size: 15px;
+    background-color: #2D315A;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding: 0 10px;
+    color: #FFF;
+}
+
+.add-form  input:focus {
+    outline: none;
+}
+
+.add-form  button {
+    width: 10%;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+    background-color: #2D315A;
+    background-image: url(./assets/icons8-plus-24-white.png);
+    background-size: 25px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.filter-btns .filter-btn,
+.footer .clear-completed-btn {
+    color: #EA4D5F;
+    margin: 10px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 100ms ease-in;
+}
+
+.filter-btns .filter-btn.active,
+.filter-btns .filter-btn:hover,
+.footer .clear-completed-btn:hover {
+    color: #FFF;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    color: #EA4D5F;
+    font-size: 1rem;
+}
+.footer .left-counter {
+    display: inline;
+    margin: auto 0;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.list .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    line-height: 30px;
+    color: #FFF;
+    background-color: #2D315A;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.list .list-item:last-of-type {
+    margin-bottom: 0;
+}
+
+.list .list-item .checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: 200ms ease-in-out;
+}
+
+.list .list-item.list-item-completed .checkbox {
+    border-color: #545185;
+    background-image: url(./assets/check-mark.png);
+    background-size: 10px 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.list .list-item.list-item-completed .checkbox:hover {
+    background-color: transparent;
+}
+
+.list .list-item .item-content {
+    padding-left: 20px;
+    text-align: left;
+    flex: 2 1 auto;
+}
+
+.list .list-item.list-item-completed .item-content {
+    text-decoration: line-through;
+    color: #545185;
+}
+
+.list .list-item .delete-btn {
+    background-image: url(./assets/icons8-delete-30.png);
+    background-size: 15px 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.list .list-item .delete-btn:hover {
+    opacity: .7;
+    animation: shaking .15s infinite;
+}
+
+@media(max-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media(max-width: 640px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media(max-width: 450px) {
+    .container {
+        padding: 20px;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+}
+
+@keyframes shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
