@@ -309,7 +309,7 @@ input:-webkit-autofill:active{
 footer {
     font-family: "Sarabun", sans-serif;
     color: var(--text-color);
-    margin: 6rem auto 2rem;
+    margin: 4rem auto 2rem;
 }
 footer a {
     color: var(--accent-color);
