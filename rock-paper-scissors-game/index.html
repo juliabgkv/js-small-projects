@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors Game!</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" /></head>
+</head>
+<body>
+    <label>
+        <input type="checkbox" id="audioSetting" class="hidden audio-setting">
+        <div class="slider"></div>
+        <span id="iconOff" class="audio_icon icon_off active">
+            <span class="material-symbols-outlined icon">no_sound</span>
+        </span>
+        <span id="iconOn" class="audio_icon icon_on">
+            <span class="material-symbols-outlined icon">volume_up</span>
+        </span>
+    </label>
+
+    <div class="container">
+        <h1 class="title">Rock, Paper, Scissors</h1>
+    
+        <div class="score">
+            <div>You: <span id="playerScore">0</span></div>
+            <div id="message" class="message wiskers">Try your luck!</div>
+            <div>Computer: <span id="pcScore">0</span></div>
+        </div>
+
+        <div class="players-choices">
+            <div id="playerChoice" class="choice-window player-choise"></div>
+            <div id="pcChoice" class="choice-window pc-choise"></div>
+        </div>
+    
+        <div class="weapon-container">
+            <h4>Choose your weapon:</h4>
+            <div id="weaponContainer" class="weapon-buttons">
+                <button data-weapon="rock" class="weapon-btn"></button>
+                <button data-weapon="paper" class="weapon-btn"></button>
+                <button data-weapon="scissors" class="weapon-btn"></button>
+            </div>
+        </div>
+        
+        <button id="showRulesBtn" class="show-rules-btn">Rules</button>
+    </div>
+
+    <div id="modalWindow" class="modal">
+        <div class="modal-content">
+            <h3 class="wiskers">Game rules</h3>
+            <p><span class="marked">Rock</span> wins against <span class="marked">scissors</span>.<br>
+                <span class="marked">Scissors</span> win against <span class="marked">paper</span>.<br>
+                <span class="marked">Paper</span> wins against <span class="marked">rock</span>.</p>
+            <button class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

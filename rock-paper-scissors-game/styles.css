@@ -1,0 +1,345 @@
+@import url('https://fonts.cdnfonts.com/css/cat-whiskers');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap');
+
+body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cat Whiskers', sans-serif;                    
+}
+
+body {
+    font-family: 'Cat Whiskers', sans-serif;
+    background-color: #a8a8a8;   
+}
+
+.container {
+    min-width: 980px;
+    width: 60%;
+    min-height: 750px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+/* ======== Sound toggler styles=========*/
+
+.hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    right: 0px;
+    bottom: 0px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0 3px gray;
+}
+
+.audio-setting:checked + .slider {
+    background: #000;  
+}
+
+.audio-setting:not(:checked) + .slider {
+    background: gray;
+}
+
+.audio-setting:not(:checked) + .slider:before {
+    right: 30px;
+}
+
+.material-symbols-outlined.icon {
+    font-size: 28px;
+}
+
+.slider:before {
+    line-height: 20px;
+    text-align: center;  
+}
+
+.audio_icon {
+    position: absolute;
+    top: 22px;
+    -webkit-transition:  0.4s;
+    transition:  0.4s;
+}
+
+.icon_on {
+    left: 20px;
+    opacity: 0;
+}
+
+.icon_off {
+    left: 50px;
+    opacity: 0;
+}
+
+.icon_on.active {
+    left: 50px;
+    opacity: 1;
+}
+
+.icon_off.active {
+    left: 21px;
+    opacity: 1;
+}
+
+/* ======== Sound toggler styles END =========*/
+
+.title {
+    letter-spacing: 10px;
+    font-size: 35px;
+    padding: 15px;
+    margin: 20px 20px 0;
+    color: #000;
+    text-align: center;
+    border-radius: 20px;
+    border: 9px dashed #000;
+    background-color: #fff;
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 750px;
+    font-size: 30px;
+    color: #fff;
+    margin: 10px auto;
+    font-family: 'Caveat', cursive;
+}
+
+.message {
+    height: 50px;
+    font-size: 40px;
+    margin: 10px auto 20px;
+}
+
+.wiskers::before {
+    margin-right: 10px;
+    content: "\269E";
+}
+
+.wiskers::after {
+    margin-left: 10px;
+    content: "\269F";
+}
+
+.players-choices {
+    height: 250px;
+    width: 750px;
+    margin: 0 auto;
+    border: 3px solid #000;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.players-choices .choice-window {
+    width: 160px;
+    height: 400px;
+    background-size: 160px 400px;
+    background-color: inherit;
+}
+
+.players-choices .choice-window.player-choise,
+.players-choices .choice-window.pc-choise {
+    position: relative;
+    top: calc(50% - 205px);
+}
+
+.players-choices .choice-window.player-choise {
+    left: 85px;
+    transform: rotate(90deg) translateY(20px);
+}
+
+.players-choices .choice-window.pc-choise {
+    right: 85px;
+    transform: rotate(-90deg);
+}
+
+.players-choices .choice-window[data-weapon="rock"] {
+    background-image: url(./assets/rock.png);
+}
+
+.players-choices .choice-window[data-weapon="paper"] {
+    background-image: url(./assets/paper.png);
+}
+
+.players-choices .choice-window[data-weapon="scissors"] {
+    background-image: url(./assets/scissors.png);
+}
+
+.weapon-container h4 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.weapon-buttons {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 3px solid #000;
+    overflow: hidden;
+}
+
+.weapon-buttons .weapon-btn {
+    border: none;
+    background-color: transparent;
+    width: 100px;
+    height: 180px;
+    background-size: cover;
+    position: relative;
+    top: 10px;
+}
+
+.weapon-buttons .weapon-btn:hover {
+    transform: translateY(-5px) scale(1.01);
+    transition: all 200ms ease-in-out;
+}
+
+.weapon-buttons .weapon-btn:hover {
+    cursor: pointer;
+}
+
+.weapon-buttons .weapon-btn[data-weapon="rock"] {
+    background-image: url(./assets/rock.png);
+}
+
+.weapon-buttons .weapon-btn[data-weapon="paper"] {
+    background-image: url(./assets/paper.png);
+}
+
+.weapon-buttons .weapon-btn[data-weapon="scissors"] {
+    background-image: url(./assets/scissors.png);
+}
+
+.show-rules-btn {
+    position: relative;
+    bottom: 60px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    margin-left: 20px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    transition: 200ms ease-in-out;
+}
+
+.show-rules-btn:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    padding-top: 200px;
+    background-color: rgba(0,0,0,0.4);
+    transition: 2000s ease-in-out;
+}
+
+.modal .modal-content {
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #000;
+    text-align: center;
+    background-color: #fff;
+    height: 350px;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animatetop;
+    animation-duration: 0.5s;
+}
+
+.modal .modal-content h3 {
+    background-color: inherit;
+    font-size: 50px;
+}
+
+.modal .modal-content p {
+    background-color: inherit;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+}
+
+.modal .modal-content p .marked {
+    background-color: inherit;
+    font-family: inherit;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.modal .modal-content .close-modal-btn {
+    margin: 10px auto;
+    font-size: 30px;
+    padding: 5px 30px;
+    width: 150px;
+    transition: 200ms ease-in;
+}
+
+.modal .modal-content .close-modal-btn:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.66);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.66);
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-100px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animatetop {
+    from {top:-100px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@media screen and (max-width: 1300px) {
+    .container {
+        width: 80%;
+    }
+}
