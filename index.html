@@ -5,19 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
         body {
+            font-family: "Titillium Web", sans-serif;
+            color: #F2EDF2;
             text-align: center;
+            background-color: #3C373D;
         }
         table {
             margin: 20px auto;
             border-collapse: collapse;
         }
+        thead {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        tbody {
+            color: #dacedf;
+        }
         thead, tbody {
             width: 100%;
         }
+        tbody tr:hover {
+            scale: 1.01;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+        }
+        tbody tr:nth-child(2n + 1) {
+            background-color: #342f36;
+        }
         td, th {
-            border: 1px solid grey;
             padding: 10px 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #dacedf;
+            transition: color .15s ease-in-out;
+        }
+        a:hover {
+            color: #fdd114;
         }
     </style>
 </head>
@@ -32,32 +58,32 @@
         </thead>
         <tbody>
             <tr>
-                <th>1</th>
+                <td>1</th>
                 <td><a href="https://github.com/juliabgkv/small-projects/tree/main/digital-clock" target="_blank">Digital Clock</a></td>
                 <td><a href="./digital-clock/index.html" target="_blank">Open Demo</a></td>
             </tr>
             <tr>
-                <th>2</th>
+                <td>2</th>
                 <td><a href="https://github.com/juliabgkv/small-projects/tree/main/hover-board" target="_blank">Hover Board</a></td>
                 <td><a href="./hover-board/index.html" target="_blank">Open Demo</a></td>
             </tr>
             <tr>
-                <th>3</th>
+                <td>3</th>
                 <td><a href="https://github.com/juliabgkv/small-projects/tree/main/authorization-form" target="_blank">Form With Validation</a></td>
                 <td><a href="./authorization-form/index.html" target="_blank">Open Demo</a></td>
             </tr>
             <tr>
-                <th>4</th>
+                <td>4</th>
                 <td><a href="https://github.com/juliabgkv/small-projects/tree/main/to-do-js" target="_blank">Simple Todo List</a></td>
                 <td><a href="./to-do-js/index.html" target="_blank">Open Demo</a></td>
             </tr>
             <tr>
-                <th>5</th>
+                <td>5</th>
                 <td><a href="https://github.com/juliabgkv/small-projects/tree/main/random-simpsons-quotes" target="_blank">Simpsons Quotes Generator</a></td>
                 <td><a href="./random-simpsons-quotes/index.html" target="_blank">Open Demo</a></td>
             </tr>
             <tr>
-                <th>6</th>
+                <td>6</th>
                 <td><a href="https://github.com/juliabgkv/small-projects/tree/main/rock-paper-scissors-game" target="_blank">Rock Paper Scissors Game</a></td>
                 <td><a href="./rock-paper-scissors-game/index.html" target="_blank">Open Demo</a></td>
             </tr>
